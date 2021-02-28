@@ -15,6 +15,7 @@ namespace simple_matrix
 		virtual void InData(ifstream& ifst) = 0; // ввод
 		virtual void Out(ofstream& ofst) = 0; // вывод
 		virtual int Summa() = 0;
+		bool compare(matr* other);
 	};
 } // end simple_matrix namespace
 #endif
