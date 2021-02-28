@@ -14,6 +14,7 @@ namespace simple_matrix
 		static matr* In(ifstream& ifst);
 		virtual void InData(ifstream& ifst) = 0; // ввод
 		virtual void Out(ofstream& ofst) = 0; // вывод
+		virtual void OutSquare(ofstream& ofst);
 	};
 } // end simple_matrix namespace
 #endif
