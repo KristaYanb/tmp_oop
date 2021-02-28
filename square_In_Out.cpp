@@ -22,4 +22,9 @@ namespace simple_matrix
 					ofst << endl;
 			}
 	}
+
+	void square::OutSquare(ofstream& ofst)
+	{
+		Out(ofst);
+	}
 } // end simple_matrix namespace

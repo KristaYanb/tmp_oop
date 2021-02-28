@@ -13,6 +13,7 @@ namespace simple_matrix
 	public: // переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
+		void OutSquare(ofstream& ofst);
 		square() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace
