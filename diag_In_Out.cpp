@@ -6,13 +6,30 @@ namespace simple_matrix
 	void diag::InData(ifstream& ifst) // ¬вод параметров диагональной матрицы
 	{
 		ifst >> size;
+		int tempKey;
+		ifst >> tempKey;
+
 		for (int i = 1; i <= size; i++)
 			ifst >> mas_diag[i];
+
+		switch (tempKey) 
+		{
+		case 0:
+			k2 = key2::STROKI;
+			break;
+		case 1:
+			k2 = key2::STOLB;
+			break;
+		case 2:
+			k2 = key2::ODN_MASS;
+			break;
+		}
 	}
 
-	void diag::Out(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	void diag::Out1(ofstream& ofst) // ¬ывод параметров диагональной матрицы
 	{
 		ofst << "It is Diag: Size = " << size << endl;
+		ofst << "STROKI " << k2 << endl;
 		for (int i = 1; i <= size; i++)
 			for (int j = 1; j <= size; j++)
 			{
@@ -23,5 +40,38 @@ namespace simple_matrix
 				if (j == size)
 					ofst << endl;
 			}
+	}
+
+	void diag::Out2(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	{
+		ofst << "It is Diag: Size = " << size << endl;
+		ofst << "STOLB " << k2 << endl;
+
+		for (int j = 1; j <= size; j++)
+			for (int i = 1; i <= size; i++)
+			{
+				if (j == i)
+					ofst << mas_diag[i] << " ";
+				else
+					ofst << "0 ";
+				if (i == size)
+					ofst << endl;
+			}
+	}
+
+	void diag::Out3(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	{
+		ofst << "It is Diag: Size = " << size << endl;
+		ofst << "ODN_MASS " << k2 << endl;
+
+		for (int j = 1; j <= size; j++)
+			for (int i = 1; i <= size; i++)
+			{
+				if (j == i)
+					ofst << mas_diag[i] << " ";
+				else
+					ofst << "0 ";
+			}
+		ofst << endl;
 	}
 } // end simple_matrix namespace
