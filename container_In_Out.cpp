@@ -43,8 +43,21 @@ namespace simple_matrix
 
 	bool node::output_node(ofstream& ofst)
 	{
-		m->Out(ofst);
-		return true;
+		if (m->k2 == 0)
+		{
+			m->Out1(ofst);
+			return true;
+		}
+		if (m->k2 == 1)
+		{
+			m->Out2(ofst);
+			return true;
+		}
+		if (m->k2 == 2)
+		{
+			m->Out3(ofst);
+			return true;
+		}
 	}
 
 	void container::Out(ofstream& ofst) // Вывод содержимого контейнера
