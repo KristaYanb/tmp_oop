@@ -47,6 +47,11 @@ namespace simple_matrix
 		return true;
 	}
 
+	int node::summa_node(ofstream& ofst)
+	{
+		return m->Summa();;
+	}
+
 	void container::Out(ofstream& ofst) // Вывод содержимого контейнера
 	{
 		ofst << "Container contains " << size << " elements. " << endl;		
@@ -57,6 +62,8 @@ namespace simple_matrix
 		{
 			ofst << i << ": ";
 			curNode->output_node(ofst);
+			curNode->summa_node(ofst);
+			ofst << "Summa = " << curNode->summa_node(ofst) << endl;
 			curNode = curNode->next;
 			i++;
 		}
