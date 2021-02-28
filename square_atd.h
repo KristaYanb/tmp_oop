@@ -12,7 +12,9 @@ namespace simple_matrix
 		int mas_square[10][10]; //двумерный массив
 	public: // переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
-		void Out(ofstream& ofst); // вывод
+		void Out1(ofstream& ofst); // вывод
+		void Out2(ofstream& ofst); // вывод
+		void Out3(ofstream& ofst); // вывод
 		square() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace

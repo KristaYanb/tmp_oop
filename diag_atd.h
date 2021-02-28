@@ -11,7 +11,9 @@ namespace simple_matrix
 		int mas_diag[20]; //одномерный массив
 	public: // переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
-		void Out(ofstream& ofst); // вывод
+		void Out1(ofstream& ofst); // вывод
+		void Out2(ofstream& ofst); // вывод
+		void Out3(ofstream& ofst); // вывод
 		diag() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace
