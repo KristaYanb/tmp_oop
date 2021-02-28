@@ -1,6 +1,7 @@
 #include "matr_atd.h"
 #include "square_atd.h"
 #include "diag_atd.h"
+#include "nizn_diag_atd.h"
 using namespace std;
 
 namespace simple_matrix
@@ -16,6 +17,9 @@ namespace simple_matrix
 			break;
 		case 2:
 			sp = new diag;
+			break;
+		case 3:
+			sp = new nizn_diag;
 			break;
 		default:
 			return 0;
