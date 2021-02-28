@@ -41,25 +41,26 @@ namespace simple_matrix
 		}
 	}
 
-	bool node::output_node(ofstream& ofst)
-	{
-		m->Out(ofst);
-		return true;
-	}
+	void container::OutSquare(ofstream& ofst) 
+	{ 
+		ofst << "Container contains " << size << " elements. " << endl;
+		ofst << "Only square." << endl; 
 
-	void container::Out(ofstream& ofst) // Вывод содержимого контейнера
-	{
-		ofst << "Container contains " << size << " elements. " << endl;		
 		node* curNode = head;
 		int i = 0;
 
 		while (curNode != NULL)
 		{
 			ofst << i << ": ";
-			curNode->output_node(ofst);
+			curNode->m->OutSquare(ofst);
 			curNode = curNode->next;
 			i++;
 		}
+	}
+
+	void matr::OutSquare(ofstream& ofst)
+	{
+		ofst << endl; // пустая строка 
 	}
 
 	container::container() // Инициализация контейнера

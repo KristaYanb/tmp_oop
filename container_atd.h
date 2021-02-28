@@ -11,7 +11,6 @@ namespace simple_matrix
         matr* m;
         node* next;
         bool add_node(ifstream& ifst);
-        bool output_node(ofstream& ofst);
         ~node();
     };
 
@@ -21,7 +20,7 @@ namespace simple_matrix
         int size;
         node* head;
         void In(ifstream& ifst);
-        void Out(ofstream& ofst);
+        void OutSquare(ofstream& ofst);
         void Clear();
 
         container();
