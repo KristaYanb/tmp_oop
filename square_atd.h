@@ -5,7 +5,6 @@
 
 namespace simple_matrix
 {
-	
 	class square : public matr // квадратная матрица
 	{
 		//int size; // размерность
@@ -15,6 +14,7 @@ namespace simple_matrix
 		void Out1(ofstream& ofst); // вывод
 		void Out2(ofstream& ofst); // вывод
 		void Out3(ofstream& ofst); // вывод
+		int Summa();
 		square() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace

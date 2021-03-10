@@ -12,6 +12,7 @@ namespace simple_matrix
         node* next;
         bool add_node(ifstream& ifst);
         bool output_node(ofstream& ofst);
+        int summa_node(ofstream& ofst);
         ~node();
     };
 

@@ -65,5 +65,13 @@ namespace simple_matrix
 				ofst << mas_square[i][j] << " ";
 			}
 		ofst << endl;
+
+	int square::Summa()
+	{
+		int summa = 0;
+		for (int i = 1; i <= size; i++)
+			for (int j = 1; j <= size; j++)
+				summa = summa + mas_square[i][j];
+		return summa;
 	}
 } // end simple_matrix namespace

@@ -20,6 +20,7 @@ namespace simple_matrix
 		virtual void Out1(ofstream& ofst) = 0; // вывод
 		virtual void Out2(ofstream& ofst) = 0; // вывод
 		virtual void Out3(ofstream& ofst) = 0; // вывод
+		virtual int Summa() = 0;
 	};
 } // end simple_matrix namespace
 #endif
