@@ -11,9 +11,15 @@ namespace simple_matrix
 	public:
 		int size;
 
+		enum key2 { STROKI, STOLB, ODN_MASS };
+		key2 k2;
+
 		static matr* In(ifstream& ifst);
 		virtual void InData(ifstream& ifst) = 0; // ввод
-		virtual void Out(ofstream& ofst) = 0; // вывод
+		//virtual void Out(ofstream& ofst) = 0; // вывод
+		virtual void Out1(ofstream& ofst) = 0; // вывод
+		virtual void Out2(ofstream& ofst) = 0; // вывод
+		virtual void Out3(ofstream& ofst) = 0; // вывод
 	};
 } // end simple_matrix namespace
 #endif
