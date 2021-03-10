@@ -28,10 +28,12 @@ namespace simple_matrix
 		}
 	}
 
-	void square::Out1(ofstream& ofst) // ¬ывод параметров квадратной матрицы
+	void square::OutStroki(ofstream& ofst) // ¬ывод параметров квадратной матрицы
 	{
 		ofst << "It is Square: Size = " << size << endl;
 		ofst << "STROKI "<< k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
+
 		for (int i = 1; i <= size; i++)
 			for (int j = 1; j <= size; j++)
 			{
@@ -41,10 +43,12 @@ namespace simple_matrix
 			}
 	}
 
-	void square::Out2(ofstream& ofst) // ¬ывод параметров квадратной матрицы
+	void square::OutStolb(ofstream& ofst) // ¬ывод параметров квадратной матрицы
 	{
 		ofst << "It is Square: Size = " << size << endl;
 		ofst << "STOLB " << k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
+
 		for (int j = 1; j <= size; j++)
 			for (int i = 1; i <= size; i++)
 			{
@@ -54,10 +58,11 @@ namespace simple_matrix
 			}
 	}
 
-	void square::Out3(ofstream& ofst) // ¬ывод параметров квадратной матрицы
+	void square::OutOdnMas(ofstream& ofst) // ¬ывод параметров квадратной матрицы
 	{
 		ofst << "It is Square: Size = " << size << endl;
 		ofst << "ODN_MASS " << k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
 
 		for (int i = 1; i <= size; i++)
 			for (int j = 1; j <= size; j++)
@@ -65,6 +70,7 @@ namespace simple_matrix
 				ofst << mas_square[i][j] << " ";
 			}
 		ofst << endl;
+	}
 
 	int square::Summa()
 	{
@@ -73,8 +79,15 @@ namespace simple_matrix
 			for (int j = 1; j <= size; j++)
 				summa = summa + mas_square[i][j];
 		return summa;
+	}
+
 	void square::OutSquare(ofstream& ofst)
 	{
-		Out(ofst);
+		if (k2 == 0)
+			OutStroki(ofst);
+		if (k2 == 1)
+			OutStolb(ofst);
+		if (k2 == 2)
+			OutOdnMas(ofst);
 	}
 } // end simple_matrix namespace

@@ -11,7 +11,10 @@ namespace simple_matrix
 		int mas_nizn_diag[50]; //одномерный массив
 	public: // переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
-		void Out(ofstream& ofst); // вывод
+		void OutStroki(ofstream& ofst); // вывод
+		void OutStolb(ofstream& ofst); // вывод
+		void OutOdnMas(ofstream& ofst); // вывод
+		int Summa();
 		nizn_diag() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace

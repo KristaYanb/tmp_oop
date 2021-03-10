@@ -17,9 +17,9 @@ namespace simple_matrix
 		static matr* In(ifstream& ifst);
 		virtual void InData(ifstream& ifst) = 0; // ввод
 		//virtual void Out(ofstream& ofst) = 0; // вывод
-		virtual void Out1(ofstream& ofst) = 0; // вывод
-		virtual void Out2(ofstream& ofst) = 0; // вывод
-		virtual void Out3(ofstream& ofst) = 0; // вывод
+		virtual void OutStroki(ofstream& ofst) = 0; // вывод
+		virtual void OutStolb(ofstream& ofst) = 0; // вывод
+		virtual void OutOdnMas(ofstream& ofst) = 0; // вывод
 		virtual int Summa() = 0;
 		bool compare(matr* other);
 		virtual void OutSquare(ofstream& ofst);

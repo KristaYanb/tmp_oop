@@ -26,7 +26,7 @@ namespace simple_matrix
 		}
 	}
 
-	void diag::Out1(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	void diag::OutStroki(ofstream& ofst) // ¬ывод параметров диагональной матрицы
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "STROKI " << k2 << endl;
@@ -42,7 +42,7 @@ namespace simple_matrix
 			}
 	}
 
-	void diag::Out2(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	void diag::OutStolb(ofstream& ofst) // ¬ывод параметров диагональной матрицы
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "STOLB " << k2 << endl;
@@ -59,7 +59,7 @@ namespace simple_matrix
 			}
 	}
 
-	void diag::Out3(ofstream& ofst) // ¬ывод параметров диагональной матрицы
+	void diag::OutOdnMas(ofstream& ofst) // ¬ывод параметров диагональной матрицы
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "ODN_MASS " << k2 << endl;
@@ -73,6 +73,7 @@ namespace simple_matrix
 					ofst << "0 ";
 			}
 		ofst << endl;
+	}
 
 	int diag::Summa()
 	{

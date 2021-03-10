@@ -58,7 +58,7 @@ namespace simple_matrix
 		{
 			ofst << i << ": ";
 			curNode->summa_node(ofst);
-			ofst << "Summa = " << curNode->summa_node(ofst) << endl;
+			//ofst << "Summa = " << curNode->summa_node(ofst) << endl;
 			curNode->m->OutSquare(ofst);
 			curNode = curNode->next;
 			i++;
@@ -70,28 +70,29 @@ namespace simple_matrix
 		return Summa() < other->Summa();
 	}
 
-	void container::sort() 
-	{ 
+	void container::sort()
+	{
 		node* left = head;
 		node* right = head->next;
 
 		node* temp = new node;
 
-		for (int i = 0; i < size - 1; i++) 
+		for (int i = 0; i < size - 1; i++)
 		{
-			for (int j = i + 1; j < size; j++) 
-			{ 
+			for (int j = i + 1; j < size; j++)
+			{
 				if (left->m->compare(right->m))
-				{ 
+				{
 					temp->m = left->m;
 					left->m = right->m;
 					right->m = temp->m;
-				} 
+				}
 				right = right->next;
-			} 
+			}
 			left = left->next;
 			right = left->next;
-		} 
+		}
+	}
 
 	void matr::OutSquare(ofstream& ofst)
 	{
