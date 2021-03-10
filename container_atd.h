@@ -23,6 +23,7 @@ namespace simple_matrix
         node* head;
         void In(ifstream& ifst);
         void Out(ofstream& ofst);
+        void sort();    //сортировка
         void Clear();
 
         container();

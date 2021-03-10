@@ -82,6 +82,35 @@ namespace simple_matrix
 		}
 	}
 
+	bool matr::compare(matr* other)
+	{
+		return Summa() < other->Summa();
+	}
+
+	void container::sort() 
+	{ 
+		node* left = head;
+		node* right = head->next;
+
+		node* temp = new node;
+
+		for (int i = 0; i < size - 1; i++) 
+		{
+			for (int j = i + 1; j < size; j++) 
+			{ 
+				if (left->m->compare(right->m))
+				{ 
+					temp->m = left->m;
+					left->m = right->m;
+					right->m = temp->m;
+				} 
+				right = right->next;
+			} 
+			left = left->next;
+			right = left->next;
+		} 
+	}
+
 	container::container() // Инициализация контейнера
 	{
 		size = 0;
