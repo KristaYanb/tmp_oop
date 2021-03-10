@@ -22,8 +22,8 @@ namespace simple_matrix
         int size;
         node* head;
         void In(ifstream& ifst);
-        void Out(ofstream& ofst);
         void sort();    //сортировка
+        void OutSquare(ofstream& ofst);
         void Clear();
 
         container();

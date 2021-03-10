@@ -22,6 +22,7 @@ namespace simple_matrix
 		virtual void Out3(ofstream& ofst) = 0; // вывод
 		virtual int Summa() = 0;
 		bool compare(matr* other);
+		virtual void OutSquare(ofstream& ofst);
 	};
 } // end simple_matrix namespace
 #endif

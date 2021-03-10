@@ -41,42 +41,25 @@ namespace simple_matrix
 		}
 	}
 
-	bool node::output_node(ofstream& ofst)
-	{
-		if (m->k2 == 0)
-		{
-			m->Out1(ofst);
-			return true;
-		}
-		if (m->k2 == 1)
-		{
-			m->Out2(ofst);
-			return true;
-		}
-		if (m->k2 == 2)
-		{
-			m->Out3(ofst);
-			return true;
-		}
-	}
-
 	int node::summa_node(ofstream& ofst)
 	{
 		return m->Summa();;
 	}
 
-	void container::Out(ofstream& ofst) // Вывод содержимого контейнера
-	{
-		ofst << "Container contains " << size << " elements. " << endl;		
+	void container::OutSquare(ofstream& ofst) 
+	{ 
+		ofst << "Container contains " << size << " elements. " << endl;
+		ofst << "Only square." << endl; 
+
 		node* curNode = head;
 		int i = 0;
 
 		while (curNode != NULL)
 		{
 			ofst << i << ": ";
-			curNode->output_node(ofst);
 			curNode->summa_node(ofst);
 			ofst << "Summa = " << curNode->summa_node(ofst) << endl;
+			curNode->m->OutSquare(ofst);
 			curNode = curNode->next;
 			i++;
 		}
@@ -109,6 +92,10 @@ namespace simple_matrix
 			left = left->next;
 			right = left->next;
 		} 
+
+	void matr::OutSquare(ofstream& ofst)
+	{
+		ofst << endl; // пустая строка 
 	}
 
 	container::container() // Инициализация контейнера

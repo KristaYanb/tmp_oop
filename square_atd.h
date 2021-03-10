@@ -15,6 +15,7 @@ namespace simple_matrix
 		void Out2(ofstream& ofst); // вывод
 		void Out3(ofstream& ofst); // вывод
 		int Summa();
+		void OutSquare(ofstream& ofst);
 		square() {} // создание без инициализации.
 	};
 } // end simple_matrix namespace

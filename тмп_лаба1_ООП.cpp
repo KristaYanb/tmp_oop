@@ -24,11 +24,12 @@ int main(int argc, char* argv[])
 	
 	ofst << "Sorted container. " << endl;
 	c.sort();
-	c.Out(ofst);
+	c.OutSquare(ofst);
+
 	c.Clear();
 	ofst << "Empty container. " << endl;
 
-	c.Out(ofst);
+	c.OutSquare(ofst);
 	cout << "Stop" << endl;
 
 	return 0;

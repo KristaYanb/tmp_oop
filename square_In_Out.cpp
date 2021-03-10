@@ -73,5 +73,8 @@ namespace simple_matrix
 			for (int j = 1; j <= size; j++)
 				summa = summa + mas_square[i][j];
 		return summa;
+	void square::OutSquare(ofstream& ofst)
+	{
+		Out(ofst);
 	}
 } // end simple_matrix namespace
