@@ -46,8 +46,44 @@ namespace simple_matrix
 		return m->Summa();;
 	}
 
+	bool node::output_node(ofstream& ofst)
+	{
+		if (m->k2 == 0)
+		{
+			m->OutStroki(ofst);
+			return true;
+		}
+		if (m->k2 == 1)
+		{
+			m->OutStolb(ofst);
+			return true;
+		}
+		if (m->k2 == 2)
+		{
+			m->OutOdnMas(ofst);
+			return true;
+		}
+	}
+
+	void container::Out(ofstream& ofst) // Вывод содержимого контейнера
+	{
+		ofst << "Container contains " << size << " elements. " << endl;
+		node* curNode = head;
+		int i = 0;
+
+		while (curNode != NULL)
+		{
+			ofst << i << ": ";
+			curNode->output_node(ofst);
+			curNode->summa_node(ofst);
+			//ofst << "Summa = " << curNode->summa_node(ofst) << endl;
+			curNode = curNode->next;
+			i++;
+		}
+	}
+
 	void container::OutSquare(ofstream& ofst) 
-	{ 
+	{
 		ofst << "Container contains " << size << " elements. " << endl;
 		ofst << "Only square." << endl; 
 

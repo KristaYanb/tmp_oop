@@ -30,6 +30,8 @@ namespace simple_matrix
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "STROKI " << k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
+
 		for (int i = 1; i <= size; i++)
 			for (int j = 1; j <= size; j++)
 			{
@@ -46,6 +48,7 @@ namespace simple_matrix
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "STOLB " << k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
 
 		for (int j = 1; j <= size; j++)
 			for (int i = 1; i <= size; i++)
@@ -63,6 +66,7 @@ namespace simple_matrix
 	{
 		ofst << "It is Diag: Size = " << size << endl;
 		ofst << "ODN_MASS " << k2 << endl;
+		ofst << "Summa = " << Summa() << endl;
 
 		for (int j = 1; j <= size; j++)
 			for (int i = 1; i <= size; i++)
