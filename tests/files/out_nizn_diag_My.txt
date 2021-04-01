@@ -1,0 +1,5 @@
+It is Nizn_Diag: Size = 2
+STROKI
+Summa = 
+1 0
+2 3
