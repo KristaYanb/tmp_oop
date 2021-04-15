@@ -11,28 +11,53 @@ int main(int argc, char* argv[])
 		cout << "incorrect command line! "
 			"Waited: command in_file out_file"
 			<< endl;
+
 		exit(1);
 	}
-	ifstream ifst(argv[1]);
+
+	ifstream ifst(argv[1]); //проверка наличия файла	
+	if (!ifst)
+	{
+		cout << "No input file found!" << endl;
+		return 0;
+	}
+
+	char ch; //проверка файла на пустоту
+	FILE* f = fopen(argv[1], "r");
+	if (fscanf(f, "%c", &ch) == EOF)
+	{
+		cout << "Input file is Empty" << endl;
+
+		return 1;
+	}
+	fclose(f);
+
 	ofstream ofst(argv[2]);
 
 	cout << "Start" << endl;
 	container c;
 
 	c.In(ifst);
-	ofst << "Filled container. " << endl;
 
+	ofst << "Filled container." << endl;
 	c.Out(ofst);
+
+	ofst << "\nSorted container." << endl;
+	c.Sort();
+	c.Out(ofst);
+
+	ofst << "\nFiltered container." << endl;
+	c.OutSquare(ofst);
 
 	// Вызываем мультиметод
 	cout << "Calling multimethod" << endl;
 	c.Multimethod(ofst);
 
 	c.Clear();
-	ofst << "Empty container. " << endl;
+	ofst << "\nEmpty container." << endl;
 
-	c.Out(ofst);
+	c.OutSquare(ofst);
 	cout << "Stop" << endl;
-
+	
 	return 0;
 }

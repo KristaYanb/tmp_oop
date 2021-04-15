@@ -10,8 +10,9 @@ namespace simple_matrix
     public:
         matr* m;
         node* next;
-        bool add_node(ifstream& ifst);
-        bool output_node(ofstream& ofst);
+        bool AddNode(ifstream& ifst);
+        bool OutputNode(ofstream& ofst);
+        int SummaNode(ofstream& ofst);
         ~node();
     };
 
@@ -22,11 +23,11 @@ namespace simple_matrix
         node* head;
         void In(ifstream& ifst);
         void Out(ofstream& ofst);
+        void Sort();    //сортировка
+        void OutSquare(ofstream& ofst);
         void Multimethod(ofstream& ofst);
         void Clear();
-
-        node* get_node(int index);
-
+        node* get_node(int index); 
         container();
         ~container();
     };
